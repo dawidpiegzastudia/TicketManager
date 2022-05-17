@@ -7,23 +7,20 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition/>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <Button Grid.Column="1" Content="Button" HorizontalAlignment="Left" Margin="806,279,0,0" Grid.Row="1" VerticalAlignment="Top" Width="0"/>
-        <Button x:Name="btnRemove" Content="Remove Ticket" Grid.Row="6" Height="Auto" Margin="517,0,105,0" Width="Auto" Grid.Column="1" HorizontalAlignment="Stretch" VerticalContentAlignment="Center"/>
-        <Button x:Name="btnUpdate" Content="Update Ticket" Grid.Row="6" Height="Auto" Margin="311,0,311,0" Width="Auto" VerticalContentAlignment="Center"/>
-        <Button x:Name="btnAdd" Content="Add Ticket" Grid.Row="6" Height="Auto" Margin="105,0,517,0" Width="Auto" VerticalContentAlignment="Center"/>
-        <DataGrid x:Name="gridTickets" IsReadOnly="True" Margin="0,0,0,64" Grid.RowSpan="7"/>
+        <DataGrid x:Name="gridTickets" IsReadOnly="True" Margin="0,0,0,40" Grid.RowSpan="6" FontSize="12" FontFamily="Arial">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="1*" Header="ID" Binding="{Binding ID}" CanUserResize="False" FontFamily="Arial" FontSize="10" FontWeight="Normal"></DataGridTextColumn>
+                <DataGridTextColumn  Width="1*" Header="Client ID" Binding="{Binding ClientID}" CanUserResize="False" FontFamily="Arial" FontSize="10" FontWeight="Normal"></DataGridTextColumn>
+                <DataGridTextColumn  Width="1*" Header="Tittle" Binding="{Binding TicketTittle}" CanUserResize="False" FontFamily="Arial" FontSize="10" FontWeight="Normal"></DataGridTextColumn>
+                <DataGridTextColumn Width="1*" Header="Status" Binding="{Binding StatusID}" CanUserResize="False" FontFamily="Arial" FontSize="10" FontWeight="Normal"></DataGridTextColumn>
+                <DataGridTextColumn Width="1*" Header="Start Date" Binding="{Binding TicketStartDate}" CanUserResize="False" FontFamily="Arial" FontSize="10" FontWeight="Normal"></DataGridTextColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+
 
     </Grid>
+
+
 </UserControl>
