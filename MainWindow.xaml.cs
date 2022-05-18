@@ -23,10 +23,10 @@ namespace TicketManager
             }
         }
 
-        private void btnTickets_Click(object sender, RoutedEventArgs e)
-        {
-            DataContext = new TicketViewModel();
 
+        private void btnClients_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new ClientWievModel();
         }
     }
 }
