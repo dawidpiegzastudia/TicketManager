@@ -7,7 +7,7 @@
         xmlns:views="clr-namespace:TicketManager.Views"
         xmlns:viewsModels="clr-namespace:TicketManager.ViewModels"      
         mc:Ignorable="d"
-        Title="Ticket Manager" Height="500" Width="1000" FontSize="36"  FontFamily="Arial" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" FontWeight="Normal" >
+        Title="Ticket Manager" Height="800" Width="1200" FontSize="36"  FontFamily="Arial" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" FontWeight="Normal" >
 
     <Grid Loaded="Window_Loaded">
         <Grid.ColumnDefinitions>
@@ -28,7 +28,7 @@
         <Button x:Name="btnExit" Content="Exit" Grid.Row="6" Padding="10,10,10,10" FontSize="24" Margin="0,0,0,0" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto"/>
         <Button x:Name="btnLogOut" Content="Log Out" Grid.Row="5" Padding="10,10,10,10" FontSize="24"/>
         <Button x:Name="btnTickets" Content="Tickets" Padding="10,10,10,10" FontSize="24" Grid.Row="2" Margin="0,0,0,0" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto"/>
-        <Button x:Name="btnAdminPanel" Content="Admin Panel" Grid.Row="4" Padding="10,10,10,10" Margin="0,0,0,0" FontSize="24" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto"/>
+        <Button x:Name="btnAdminPanel" Content="Admin Panel" Grid.Row="4" Padding="10,10,10,10" Margin="0,0,0,0" FontSize="24" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto" Click="btnAdminPanel_Click"/>
         <ContentControl Content="{Binding}" Grid.Column="1" Grid.RowSpan="8" Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch"/>
         <Button x:Name="btnClients" Content="Clients" Grid.Row="3" Padding="10,10,10,10" FontSize="24" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="btnClients_Click"/>
     </Grid>

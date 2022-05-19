@@ -17,16 +17,22 @@ namespace TicketManager
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            using (TicketingSystemDatabaseContext database = new TicketingSystemDatabaseContext())
-            {
 
-            }
         }
 
 
         private void btnClients_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new ClientWievModel();
+        }
+
+        private void btnAdminPanel_Click(object sender, RoutedEventArgs e)
+        {
+            AdminWindow adminWindow = new AdminWindow();
+            this.Close();
+            adminWindow.Show();
+
+
         }
     }
 }
