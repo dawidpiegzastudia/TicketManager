@@ -5,41 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TicketManager"
         xmlns:views="clr-namespace:TicketManager.Views"
-        xmlns:viewsModels="clr-namespace:TicketManager.ViewModels"      
+        xmlns:viewsModels="clr-namespace:TicketManager.ViewModels"
+        
+  
         mc:Ignorable="d"
-        Title="Ticket Manager" Height="800" Width="1200" FontSize="36"  FontFamily="Arial" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" FontWeight="Normal" >
+        Title="MainWindow" Height="800" Width="1400" ResizeMode="NoResize">
+    <Grid>
 
-    <Grid Loaded="Window_Loaded">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="816"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <Image Source="/technical-support(1).png" Grid.RowSpan="2" Margin="0,0,0,0" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto"/>
-        <Button x:Name="btnExit" Content="Exit" Grid.Row="6" Padding="10,10,10,10" FontSize="24" Margin="0,0,0,0" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto"/>
-        <Button x:Name="btnLogOut" Content="Log Out" Grid.Row="5" Padding="10,10,10,10" FontSize="24"/>
-        <Button x:Name="btnTickets" Content="Tickets" Padding="10,10,10,10" FontSize="24" Grid.Row="2" Margin="0,0,0,0" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto"/>
-        <Button x:Name="btnAdminPanel" Content="Admin Panel" Grid.Row="4" Padding="10,10,10,10" Margin="0,0,0,0" FontSize="24" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto" Click="btnAdminPanel_Click"/>
-        <ContentControl Content="{Binding}" Grid.Column="1" Grid.RowSpan="8" Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch"/>
-        <Button x:Name="btnClients" Content="Clients" Grid.Row="3" Padding="10,10,10,10" FontSize="24" Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="btnClients_Click"/>
-    </Grid>
+            <Button x:Name="btnClients" Content="Clients" HorizontalAlignment="Left" Margin="32,221,0,0" VerticalAlignment="Top" FontSize="14" Width="130" Height="55" Click="btnClients_Click"/>
+            <Button x:Name="btnTickets" Content="Tickets" HorizontalAlignment="Left" Margin="32,116,0,0" VerticalAlignment="Top" FontSize="14" Width="130" Height="55"/>
+            <Button x:Name="btnUsers" Content="Users" HorizontalAlignment="Left" Margin="32,326,0,0" VerticalAlignment="Top" FontSize="14" Width="130" Height="55"/>
+            <Button x:Name="btnLogout" Content="Log Out" HorizontalAlignment="Left" Margin="32,613,0,0" VerticalAlignment="Top" FontSize="14" Width="130" Height="55"/>
+            <ContentControl Content="{Binding}" HorizontalAlignment="Left" Margin="322,0,0,0" VerticalAlignment="Center" Height="552" Width="802"/>
 
+
+        </Grid>
     <Window.Resources>
         <DataTemplate x:Name="ClientTemplate" DataType="{x:Type viewsModels:ClientWievModel}">
             <views:ClientList>
-
+                
             </views:ClientList>
         </DataTemplate>
     </Window.Resources>
-
-
-</Window>  
+</Window>
