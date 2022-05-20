@@ -9,21 +9,21 @@
         
   
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1400" ResizeMode="NoResize">
+        Title="MainWindow" Height="600" Width="1200" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
 
-            <Button x:Name="btnClients" Content="Clients" HorizontalAlignment="Left" Margin="32,221,0,0" VerticalAlignment="Top" FontSize="14" Width="130" Height="55" Click="btnClients_Click"/>
-            <Button x:Name="btnTickets" Content="Tickets" HorizontalAlignment="Left" Margin="32,116,0,0" VerticalAlignment="Top" FontSize="14" Width="130" Height="55"/>
-            <Button x:Name="btnUsers" Content="Users" HorizontalAlignment="Left" Margin="32,326,0,0" VerticalAlignment="Top" FontSize="14" Width="130" Height="55"/>
-            <Button x:Name="btnLogout" Content="Log Out" HorizontalAlignment="Left" Margin="32,613,0,0" VerticalAlignment="Top" FontSize="14" Width="130" Height="55"/>
-            <ContentControl Content="{Binding}" HorizontalAlignment="Left" Margin="322,0,0,0" VerticalAlignment="Center" Height="552" Width="802"/>
+        <Button x:Name="btnClients" Content="Clients" HorizontalAlignment="Left" Margin="32,221,0,0" VerticalAlignment="Top" FontSize="14" Width="130" Height="55" Click="btnClients_Click"/>
+        <Button x:Name="btnTickets" Content="Tickets" HorizontalAlignment="Left" Margin="32,116,0,0" VerticalAlignment="Top" FontSize="14" Width="130" Height="55"/>
+        <Button x:Name="btnUsers" Content="Users" HorizontalAlignment="Left" Margin="32,326,0,0" VerticalAlignment="Top" FontSize="14" Width="130" Height="55"/>
+        <Button x:Name="btnLogout" Content="Log Out" HorizontalAlignment="Left" Margin="32,467,0,0" VerticalAlignment="Top" FontSize="14" Width="130" Height="55"/>
+        <ContentControl Content="{Binding}" HorizontalAlignment="Left" Margin="322,0,0,0" VerticalAlignment="Center" Height="552" Width="802"/>
 
 
-        </Grid>
+    </Grid>
     <Window.Resources>
         <DataTemplate x:Name="ClientTemplate" DataType="{x:Type viewsModels:ClientWievModel}">
             <views:ClientList>
-                
+
             </views:ClientList>
         </DataTemplate>
     </Window.Resources>

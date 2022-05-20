@@ -30,5 +30,16 @@ namespace TicketManager.Views
                 gridClients.ItemsSource = list;
             }
         }
+
+        private void btnAddClient_Click(object sender, RoutedEventArgs e)
+        {
+            ClientPage clientPage = new ClientPage();
+            clientPage.ShowDialog();
+            using (TicketingSystemDatabaseContext db = new TicketingSystemDatabaseContext())
+            {
+                List<Client> list = db.Clients.ToList();
+                gridClients.ItemsSource = list;
+            }
+        }
     }
 }
