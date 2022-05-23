@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TicketManager"
         mc:Ignorable="d"
-        Title="ClientPage" Height="350" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" FontFamily="Arial" FontSize="14px">
-    <Grid HorizontalAlignment="Left" Width="600">
+        Title="ClientPage" Height="350" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" FontFamily="Arial" FontSize="14px" Loaded="Window_Loaded">
+    <Grid HorizontalAlignment="Left" Width="600" Loaded="Grid_Loaded">
         <TextBox x:Name="txtCName" HorizontalAlignment="Left" Margin="242,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtCPost" HorizontalAlignment="Center" Margin="0,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtCStreet" Margin="240,127,240,0" TextWrapping="Wrap" VerticalAlignment="Top"/>

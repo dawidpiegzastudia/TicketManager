@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:TicketManager.Views"
              mc:Ignorable="d" d:DesignWidth="800" Height="444">
     <Grid>
-        <DataGrid x:Name="gridClients" IsReadOnly="False" FontSize="12" FontFamily="Arial" SelectionMode="Single" AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True" Width="802" Height="374" HorizontalAlignment="Center" VerticalAlignment="Top" MaxWidth="802" MaxHeight="374">
+        <DataGrid x:Name="gridClients" IsReadOnly="True" FontSize="12" FontFamily="Arial" SelectionMode="Single" AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True" Width="802" Height="374" HorizontalAlignment="Center" VerticalAlignment="Top" MaxWidth="802" MaxHeight="374">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="1*" Header="ID" Binding="{Binding ID}" CanUserResize="False" Visibility="Hidden"></DataGridTextColumn>
                 <DataGridTextColumn Width="1*" Header="Name" Binding="{Binding ClientName}" CanUserResize="False"></DataGridTextColumn>
@@ -17,7 +17,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btnAddClient" Content="Add Client" HorizontalAlignment="Left" Margin="150,379,0,0" VerticalAlignment="Top" Width="130" Height="55" FontFamily="Arial" Click="btnAddClient_Click"/>
-        <Button x:Name="btnRemoveClient" Content="Remove Client" Margin="0,379,150,0" VerticalAlignment="Top" Height="55" FontFamily="Arial" HorizontalAlignment="Right" Width="130"/>
-        <Button x:Name="btnUpdateClient" Content="Update Client" Margin="335,379,335,0" VerticalAlignment="Top" Height="55" FontFamily="Arial"/>
+        <Button x:Name="btnRemoveClient" Content="Remove Client" Margin="0,379,150,0" VerticalAlignment="Top" Height="55" FontFamily="Arial" HorizontalAlignment="Right" Width="130" Click="btnRemoveClient_Click"/>
+        <Button x:Name="btnUpdateClient" Content="Update Client" Margin="335,379,335,0" VerticalAlignment="Top" Height="55" FontFamily="Arial" Click="btnUpdateClient_Click"/>
     </Grid>
 </UserControl>

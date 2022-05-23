@@ -41,5 +41,35 @@ namespace TicketManager.Views
                 gridClients.ItemsSource = list;
             }
         }
+
+        private void btnUpdateClient_Click(object sender, RoutedEventArgs e)
+        {
+            Client clt = (Client)gridClients.SelectedItem;
+            ClientPage page = new ClientPage();
+            page.client = clt;
+            page.ShowDialog();
+            using (TicketingSystemDatabaseContext db = new TicketingSystemDatabaseContext())
+            {
+                List<Client> list = db.Clients.ToList();
+                gridClients.ItemsSource = list;
+            }
+        }
+
+        private void btnRemoveClient_Click(object sender, RoutedEventArgs e)
+        {
+            Client clt = (Client)gridClients.SelectedItem;
+
+            if (MessageBox.Show($"Are you sure to delete {clt.ClientName}?", "Questions", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                var db = new TicketingSystemDatabaseContext();
+                db.Remove(clt);
+                db.SaveChanges();
+                List<Client> list = db.Clients.ToList();
+                gridClients.ItemsSource = list;
+            }
+
+        }
+
+
     }
 }
