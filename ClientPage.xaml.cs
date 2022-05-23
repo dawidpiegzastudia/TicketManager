@@ -54,6 +54,11 @@ namespace TicketManager
                         update.City = txtCCity.Text;    
                         db.Update(update);
                         db.SaveChanges();
+                        txtCName.Clear();
+                        txtCPost.Clear();
+                        txtCStreet.Clear();
+                        txtCbuilding.Clear();
+                        txtCCity.Clear();
                         MessageBox.Show($"Client {client.Id} has been updated");
                     }
                     else

@@ -30,5 +30,10 @@ namespace TicketManager
             DataContext = new ClientWievModel();
 
         }
+
+        private void btnUsers_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new EmployeeViewMmodel();
+        }
     }
 }
