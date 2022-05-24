@@ -1,6 +1,6 @@
 ﻿namespace TicketManager.ViewModels
 {
-    internal class ClientWievModel
+    public class TicketViewModel
     {
     }
 }
