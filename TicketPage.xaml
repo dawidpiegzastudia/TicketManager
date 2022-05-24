@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TicketManager"
         mc:Ignorable="d"
-        Title="TicketPage" Height="450" Width="800">
+        Title="TicketPage" Height="350" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" FontFamily="Arial" FontSize="14px">
     <Grid>
-        
+        <ComboBox x:Name="cboxEmployee" HorizontalAlignment="Left" Margin="319,84,0,0" VerticalAlignment="Top" Width="160"/>
+        <ComboBox x:Name="cboxStatus" HorizontalAlignment="Left" Margin="319,115,0,0" VerticalAlignment="Top" Width="160"/>
+        <ComboBox x:Name="cboxClient" HorizontalAlignment="Left" Margin="319,53,0,0" VerticalAlignment="Top" Width="160"/>
+        <DatePicker x:Name="dpickDate" HorizontalAlignment="Left" Margin="319,145,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtTittle" HorizontalAlignment="Left" Margin="319,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242"/>
+        <Label x:Name="lblTittle" Content="Tittle" HorizontalAlignment="Left" Margin="80,20,0,0" VerticalAlignment="Top" Width="112"/>
+        <Label x:Name="lblTClient" Content="Client" HorizontalAlignment="Left" Margin="80,51,0,0" VerticalAlignment="Top" Width="112"/>
+        <Label x:Name="lblTEmployee" Content="Employee" HorizontalAlignment="Left" Margin="80,82,0,0" VerticalAlignment="Top" Width="112"/>
+        <Label x:Name="lblTStatus" Content="Status" HorizontalAlignment="Left" Margin="80,113,0,0" VerticalAlignment="Top" Width="112"/>
+        <Label x:Name="lblTDate" Content="Date" HorizontalAlignment="Left" Margin="80,144,0,0" VerticalAlignment="Top" Width="112"/>
+        <RichTextBox x:Name="txtContent" Margin="80,186,39,8">
+            <FlowDocument>
+                <Paragraph>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
     </Grid>
 </Window>
