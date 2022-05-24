@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TicketManager.Database;
 
 namespace TicketManager.Views
 {
@@ -22,7 +23,20 @@ namespace TicketManager.Views
     {
         public TicketListView()
         {
+
             InitializeComponent();
+
+            using (TicketingSystemDatabaseContext db6 = new TicketingSystemDatabaseContext())
+            {
+                List<Ticket> tickets = db6.Tickets.ToList();
+                gridTickets.ItemsSource = tickets;
+            }
+        }
+
+        private void btnAddTicket_Click(object sender, RoutedEventArgs e)
+        {
+            TicketPage employeePage = new TicketPage();
+            employeePage.ShowDialog();
         }
     }
 }

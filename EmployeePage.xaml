@@ -17,7 +17,7 @@
         <Label x:Name="lblUSurname" Content="Surname" HorizontalAlignment="Left" Margin="110,163,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblUAdmin" Content="Admin Role" HorizontalAlignment="Left" Margin="110,203,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnSave" Content="Save" Margin="206,249,319,0" VerticalAlignment="Top" Click="btnSave_Click"/>
-        <Button x:Name="btnCancel" Content="Cancel" Margin="320,249,205,0" VerticalAlignment="Top" Click="btnCancel_Click"/>
+        <Button x:Name="btnCancel" Content="Cancel" Margin="320,249,205,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="chckUAdmin" HorizontalAlignment="Left" Margin="265,209,0,0" VerticalAlignment="Top" />
 
     </Grid>
