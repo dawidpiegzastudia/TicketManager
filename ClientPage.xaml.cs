@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using TicketManager.Database;
 
 namespace TicketManager
@@ -37,7 +25,7 @@ namespace TicketManager
             if (string.IsNullOrEmpty(txtCName.Text) || string.IsNullOrEmpty(txtCPost.Text) || 
                 string.IsNullOrEmpty(txtCStreet.Text) || string.IsNullOrEmpty(txtCbuilding.Text) || string.IsNullOrEmpty(txtCCity.Text))
             {
-                MessageBox.Show("Please fill all inputs");
+                MessageBox.Show("Please fill all inputs.");
             }
             else
             {
@@ -59,7 +47,7 @@ namespace TicketManager
                         txtCStreet.Clear();
                         txtCbuilding.Clear();
                         txtCCity.Clear();
-                        MessageBox.Show($"Client {client.Id} has been updated");
+                        MessageBox.Show($"Client {client.ClientName} has been updated!");
                     }
                     else
                     {
@@ -76,7 +64,7 @@ namespace TicketManager
                         txtCStreet.Clear();
                         txtCbuilding.Clear();
                         txtCCity.Clear();
-                        MessageBox.Show("Client has been added");
+                        MessageBox.Show("Client has been added!");
                     }
                 }
             }

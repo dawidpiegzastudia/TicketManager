@@ -52,7 +52,7 @@ namespace TicketManager
                 if (string.IsNullOrEmpty(txtTittle.Text) || string.IsNullOrEmpty(txtContent.Text) ||
                     cboxClient.SelectedIndex == -1 || cboxEmployee.SelectedIndex == -1 || cboxEmployee.SelectedIndex == -1)
                 {
-                    MessageBox.Show("Please fill all inputs");
+                    MessageBox.Show("Please fill all inputs.");
                 }
                 else 
                 {
@@ -81,7 +81,7 @@ namespace TicketManager
                     ticket.TicketStartDate = (DateTime)dpickDate.SelectedDate;
                     db.Tickets.Add(ticket);
                     db.SaveChanges();
-                    MessageBox.Show($"Ticket id: {ticket.Id} has been added");
+                    MessageBox.Show($"Ticket has been added");
                     txtTittle.Clear();
                     txtContent.Clear();
                     cboxClient.SelectedIndex = -1;

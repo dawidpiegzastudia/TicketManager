@@ -15,7 +15,7 @@
         <Button x:Name="btnClients" Content="Clients" HorizontalAlignment="Left" Margin="32,221,0,0" VerticalAlignment="Top" FontSize="14" Width="130" Height="55" Click="btnClients_Click"/>
         <Button x:Name="btnTickets" Content="Tickets" HorizontalAlignment="Left" Margin="32,116,0,0" VerticalAlignment="Top" FontSize="14" Width="130" Height="55" Click="btnTickets_Click"/>
         <Button x:Name="btnUsers" Content="Users" HorizontalAlignment="Left" Margin="32,326,0,0" VerticalAlignment="Top" FontSize="14" Width="130" Height="55" Click="btnUsers_Click"/>
-        <Button x:Name="btnLogout" Content="Log Out" HorizontalAlignment="Left" Margin="32,467,0,0" VerticalAlignment="Top" FontSize="14" Width="130" Height="55"/>
+        <Button x:Name="btnLogout" Content="Log Out" HorizontalAlignment="Left" Margin="32,467,0,0" VerticalAlignment="Top" FontSize="14" Width="130" Height="55" Click="btnLogout_Click"/>
         <ContentControl Content="{Binding}" HorizontalAlignment="Left" Margin="322,0,0,0" VerticalAlignment="Center" Height="552" Width="802"/>
 
 

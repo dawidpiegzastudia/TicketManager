@@ -54,7 +54,7 @@ namespace TicketManager
                     txtUName.Clear();
                     txtUSurname.Clear();
                     chckUAdmin.IsChecked = false;
-                    MessageBox.Show($"Employee {employee.Id} has been updated");
+                    MessageBox.Show($"Employee {employee.Login} has been updated!");
                 }
                 else
                 {

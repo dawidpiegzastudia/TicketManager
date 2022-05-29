@@ -26,7 +26,7 @@ namespace TicketManager
         {
             if (String.IsNullOrEmpty(txtLogin.Text) && String.IsNullOrEmpty(txtPassword.Text))
             {
-                MessageBox.Show("Please fill all inputs");
+                MessageBox.Show("Please fill all inputs.");
             }
             else
             {
@@ -35,12 +35,15 @@ namespace TicketManager
                 {
                     this.Visibility = Visibility.Collapsed;
                     MainWindow mainWindow = new MainWindow();
+                    UserPermission.Id = employee.Id;
+                    UserPermission.Login = employee.Login;
+                    UserPermission.IsAdmin = employee.IsAdmin;
                     mainWindow.ShowDialog();
 
                 }
                 else
                 {
-                    MessageBox.Show("Login or password is incorect!");
+                    MessageBox.Show("The login or password is incorrect!");
                 }
             }
         }
