@@ -59,8 +59,8 @@ namespace TicketManager
                     if ((ticket != null && ticket.Id != 0))
                     {
                     Ticket t = db.Tickets.Find(ticket.Id);
-                    ticket.ClientId = (int)cboxClient.SelectedValue;
-                    ticket.SatusId = (int)cboxStatus.SelectedValue;
+                    t.ClientId = (int)cboxClient.SelectedValue;
+                    t.SatusId = (int)cboxStatus.SelectedValue;
                     t.EmployeeId = (int)cboxEmployee.SelectedValue;
                     t.TicketStartDate = (DateTime)dpickDate.SelectedDate;
                     t.TicketTittle = txtTittle.Text;
