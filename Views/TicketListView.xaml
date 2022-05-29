@@ -18,9 +18,9 @@
                 <DataGridTextColumn Width="1*" Header="Created" Binding="{Binding TicketStartDate}" CanUserResize="False"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnAddTicket" Content="Add Ticket" HorizontalAlignment="Left" Margin="150,379,0,0" VerticalAlignment="Top" Width="130" Height="55" FontFamily="Arial" Click="btnAddTicket_Click"/>
-        <Button x:Name="btnRemoveTicket" Content="Remove Ticket" Margin="0,379,150,0" VerticalAlignment="Top" Height="55" FontFamily="Arial" HorizontalAlignment="Right" Width="130"/>
-        <Button x:Name="btnUpdateTicket" Content="Update Ticket" Margin="335,379,335,0" VerticalAlignment="Top" Height="55" FontFamily="Arial"/>
+        <Button x:Name="btnAddTicket" Content="Add Ticket" HorizontalAlignment="Left" Margin="150,379,0,0" VerticalAlignment="Top" Width="130" Height="55" FontFamily="Arial" Click="btnAddTicket_Click" />
+        <Button x:Name="btnRemoveTicket" Content="Remove Ticket" Margin="0,379,150,0" VerticalAlignment="Top" Height="55" FontFamily="Arial" HorizontalAlignment="Right" Width="130" Click="btnRemoveTicket_Click"/>
+        <Button x:Name="btnUpdateTicket" Content="Update Ticket" Margin="335,379,335,0" VerticalAlignment="Top" Height="55" FontFamily="Arial" Click="btnUpdateTicket_Click"/>
 
     </Grid>
 </UserControl>

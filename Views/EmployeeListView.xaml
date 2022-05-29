@@ -9,7 +9,7 @@
     <Grid>
         <DataGrid x:Name="gridEmployees" IsReadOnly="True" FontSize="12" FontFamily="Arial" SelectionMode="Single" AutoGenerateColumns="False"  Width="802" Height="374" HorizontalAlignment="Center" VerticalAlignment="Top" MaxWidth="802" MaxHeight="374" IsSynchronizedWithCurrentItem="True">
             <DataGrid.Columns>
-            <DataGridTextColumn Width="1*" Header="ID" Binding="{Binding Id}" CanUserResize="False" Visibility="Hidden"></DataGridTextColumn>
+            <DataGridTextColumn Width="1*" Header="ID"  Binding="{Binding Id}" CanUserResize="False" Visibility="Hidden"></DataGridTextColumn>
             <DataGridTextColumn Width="1*" Header="Login" Binding="{Binding Login}" CanUserResize="False"></DataGridTextColumn>
             <DataGridTextColumn Width="1*" Header="Password" Binding="{Binding Password}" CanUserResize="False"></DataGridTextColumn>
             <DataGridTextColumn Width="1*" Header="Name" Binding="{Binding Name}" CanUserResize="False"></DataGridTextColumn>

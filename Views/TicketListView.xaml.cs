@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using TicketManager.Database;
 
 namespace TicketManager.Views
@@ -21,22 +11,51 @@ namespace TicketManager.Views
     /// </summary>
     public partial class TicketListView : UserControl
     {
+        TicketingSystemDatabaseContext db = new TicketingSystemDatabaseContext();
+        List<Ticket> tickets = new List<Ticket>();
         public TicketListView()
         {
-
             InitializeComponent();
-
-            using (TicketingSystemDatabaseContext db6 = new TicketingSystemDatabaseContext())
-            {
-                List<Ticket> tickets = db6.Tickets.ToList();
-                gridTickets.ItemsSource = tickets;
-            }
+            tickets = db.Tickets.ToList();
+            gridTickets.ItemsSource = tickets;
         }
 
         private void btnAddTicket_Click(object sender, RoutedEventArgs e)
         {
-            TicketPage employeePage = new TicketPage();
-            employeePage.ShowDialog();
+            TicketPage page = new TicketPage(); 
+            page.ShowDialog();
+            using (TicketingSystemDatabaseContext db1 = new TicketingSystemDatabaseContext())
+            {
+                List<Ticket> list1 = db1.Tickets.ToList();
+                gridTickets.ItemsSource = list1;
+            }
+        }
+
+        private void btnUpdateTicket_Click(object sender, RoutedEventArgs e)
+        {
+            Ticket ticket = new Ticket();
+            TicketPage page = new TicketPage();
+            page.ticket = ticket;
+            page.ShowDialog();
+            using (TicketingSystemDatabaseContext db1 = new TicketingSystemDatabaseContext())
+            {
+                List<Ticket> list1 = db1.Tickets.ToList();
+                gridTickets.ItemsSource = list1;
+            }
+        }
+
+        private void btnRemoveTicket_Click(object sender, RoutedEventArgs e)
+        {
+            Ticket ticket = (Ticket)gridTickets.SelectedItem;
+
+            if (MessageBox.Show($"Are you sure to delete {ticket.Id}?", "Questions", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                var db = new TicketingSystemDatabaseContext();
+                db.Remove(ticket);
+                db.SaveChanges();
+                List<Ticket> list1 = db.Tickets.ToList();
+                gridTickets.ItemsSource = list1;
+            }
         }
     }
 }
