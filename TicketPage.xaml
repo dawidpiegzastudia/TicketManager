@@ -23,7 +23,7 @@
         <Label x:Name="lblTDate" Content="Date" HorizontalAlignment="Left" Margin="80,144,0,0" VerticalAlignment="Top" Width="112" Height="26"/>
         <TextBox x:Name="txtContent" Margin="45,206,39,111" VerticalScrollBarVisibility="Visible"/>
         <Button x:Name="btnSaveTicket" Content="Save" Margin="160,425,365,0" VerticalAlignment="Top" Click="btnSaveTicket_Click" />
-        <Button x:Name="btnCancelTicket" Content="Cancel" Margin="365,425,160,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnCancelTicket" Content="Cancel" Margin="365,425,160,0" VerticalAlignment="Top" Click="btnCancelTicket_Click"/>
 
     </Grid>
 </Window>

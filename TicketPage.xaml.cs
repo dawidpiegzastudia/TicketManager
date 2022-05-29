@@ -59,12 +59,13 @@ namespace TicketManager
                     if ((ticket != null && ticket.Id != 0))
                     {
                     Ticket t = db.Tickets.Find(ticket.Id);
-                    t.ClientId = (int)cboxClient.SelectedValue;
-                    t.SatusId = (int)cboxStatus.SelectedValue;
+                    ticket.ClientId = (int)cboxClient.SelectedValue;
+                    ticket.SatusId = (int)cboxStatus.SelectedValue;
                     t.EmployeeId = (int)cboxEmployee.SelectedValue;
                     t.TicketStartDate = (DateTime)dpickDate.SelectedDate;
                     t.TicketTittle = txtTittle.Text;
                     t.TicketContent = txtContent.Text;
+                    db.Update(t);
                     db.SaveChanges();
                     MessageBox.Show($"Ticket {ticket.Id} has been updated");
                     }
@@ -92,7 +93,11 @@ namespace TicketManager
 
             }
 
+        private void btnCancelTicket_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
+    }
 
     
 }

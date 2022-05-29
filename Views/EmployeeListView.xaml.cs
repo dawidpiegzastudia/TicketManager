@@ -39,6 +39,12 @@ namespace TicketManager.Views
             EmployeePage page = new EmployeePage();
             page.employee = employee;
             page.ShowDialog();
+            using (TicketingSystemDatabaseContext db1 = new TicketingSystemDatabaseContext())
+            {
+                List<Employee> list1 = db1.Employees.ToList();
+                gridEmployees.ItemsSource = list1;
+            }
+
         }
 
         private void btnRemoveEmployee_Click(object sender, RoutedEventArgs e)

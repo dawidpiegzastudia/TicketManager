@@ -12,10 +12,7 @@ namespace TicketManager
         {
             InitializeComponent();
         }
-        private void btnCancel_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
+
 
         public Employee employee;
 
@@ -78,6 +75,12 @@ namespace TicketManager
                     MessageBox.Show("Employee has been added");
                 }
             }
+
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

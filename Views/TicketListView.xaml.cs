@@ -33,10 +33,11 @@ namespace TicketManager.Views
 
         private void btnUpdateTicket_Click(object sender, RoutedEventArgs e)
         {
-            Ticket ticket = new Ticket();
+            Ticket ticket = (Ticket)gridTickets.SelectedItem;
             TicketPage page = new TicketPage();
             page.ticket = ticket;
             page.ShowDialog();
+            
             using (TicketingSystemDatabaseContext db1 = new TicketingSystemDatabaseContext())
             {
                 List<Ticket> list1 = db1.Tickets.ToList();
