@@ -34,9 +34,9 @@ namespace TicketManager.Views
 
         private void btnUpdateClient_Click(object sender, RoutedEventArgs e)
         {
-            Client clt = (Client)gridClients.SelectedItem;
+            Client client = (Client)gridClients.SelectedItem;
             ClientPage page = new ClientPage();
-            page.client = clt;
+            page.client = client;
             page.ShowDialog();
             using (TicketingSystemDatabaseContext db = new TicketingSystemDatabaseContext())
             {
@@ -47,19 +47,17 @@ namespace TicketManager.Views
 
         private void btnRemoveClient_Click(object sender, RoutedEventArgs e)
         {
-            Client clt = (Client)gridClients.SelectedItem;
-
-            if (MessageBox.Show($"Are you sure to delete {clt.ClientName}?", "Questions", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            Client client = (Client)gridClients.SelectedItem;
+            if (MessageBox.Show($"Are you sure to delete {client.ClientName}?", "Questions", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
-                var db = new TicketingSystemDatabaseContext();
-                db.Remove(clt);
-                db.SaveChanges();
-                List<Client> list = db.Clients.ToList();
-                gridClients.ItemsSource = list;
+                using (TicketingSystemDatabaseContext db = new TicketingSystemDatabaseContext())
+                {
+                    db.Remove(client);
+                    db.SaveChanges();
+                    List<Client> list = db.Clients.ToList();
+                    gridClients.ItemsSource = list;
+                }
             }
-
         }
-
-
     }
 }

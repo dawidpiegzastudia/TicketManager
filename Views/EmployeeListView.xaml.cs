@@ -14,10 +14,10 @@ namespace TicketManager.Views
         public EmployeeListView()
         {
             InitializeComponent();
-            using (TicketingSystemDatabaseContext db1 = new TicketingSystemDatabaseContext())
+            using (TicketingSystemDatabaseContext db = new TicketingSystemDatabaseContext())
             {
-                List<Employee> list1 = db1.Employees.ToList();
-                gridEmployees.ItemsSource = list1;
+                List<Employee> list = db.Employees.ToList();
+                gridEmployees.ItemsSource = list;
             }
         }
 
@@ -25,10 +25,10 @@ namespace TicketManager.Views
         {
             EmployeePage employeePage = new EmployeePage();
             employeePage.ShowDialog();
-            using (TicketingSystemDatabaseContext db1 = new TicketingSystemDatabaseContext())
+            using (TicketingSystemDatabaseContext db = new TicketingSystemDatabaseContext())
             {
-                List<Employee> list1 = db1.Employees.ToList();
-                gridEmployees.ItemsSource = list1;
+                List<Employee> list = db.Employees.ToList();
+                gridEmployees.ItemsSource = list;
             }
 
         }
@@ -36,29 +36,29 @@ namespace TicketManager.Views
         private void btnUpdateemployee_Click(object sender, RoutedEventArgs e)
         {
             Employee employee = (Employee)gridEmployees.SelectedItem;
-            EmployeePage page = new EmployeePage();
-            page.employee = employee;
-            page.ShowDialog();
-            using (TicketingSystemDatabaseContext db1 = new TicketingSystemDatabaseContext())
+            EmployeePage employeePage = new EmployeePage();
+            employeePage.employee = employee;
+            employeePage.ShowDialog();
+            using (TicketingSystemDatabaseContext db = new TicketingSystemDatabaseContext())
             {
-                List<Employee> list1 = db1.Employees.ToList();
-                gridEmployees.ItemsSource = list1;
+                List<Employee> list = db.Employees.ToList();
+                gridEmployees.ItemsSource = list;
             }
 
         }
 
         private void btnRemoveEmployee_Click(object sender, RoutedEventArgs e)
         {
-
             Employee employee = (Employee)gridEmployees.SelectedItem;
-
             if (MessageBox.Show($"Are you sure to delete {employee.Login}?", "Questions", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
-                var db = new TicketingSystemDatabaseContext();
-                db.Remove(employee);
-                db.SaveChanges();
-                List<Employee> list1 = db.Employees.ToList();
-                gridEmployees.ItemsSource = list1;
+                using (TicketingSystemDatabaseContext db = new TicketingSystemDatabaseContext())
+                {
+                    db.Remove(employee);
+                    db.SaveChanges();
+                    List<Employee> list = db.Employees.ToList();
+                    gridEmployees.ItemsSource = list;
+                }
             }
         }
     }
