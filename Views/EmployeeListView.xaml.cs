@@ -50,16 +50,24 @@ namespace TicketManager.Views
         private void btnRemoveEmployee_Click(object sender, RoutedEventArgs e)
         {
             Employee employee = (Employee)gridEmployees.SelectedItem;
+            
             if (MessageBox.Show($"Are you sure to delete {employee.Login}?", "Questions", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
-                using (TicketingSystemDatabaseContext db = new TicketingSystemDatabaseContext())
+                if (employee.Id == UserPermission.Id)
                 {
-                    db.Remove(employee);
-                    db.SaveChanges();
-                    List<Employee> list = db.Employees.ToList();
-                    gridEmployees.ItemsSource = list;
+                    MessageBox.Show("This action is not allowed! This user is currently logged in!");
+                }
+                else
+                {
+                    using (TicketingSystemDatabaseContext db = new TicketingSystemDatabaseContext())
+                    {
+                        db.Remove(employee);
+                        db.SaveChanges();
+                        List<Employee> list = db.Employees.ToList();
+                        gridEmployees.ItemsSource = list;
+                    }
+                }
                 }
             }
-        }
     }
 }
