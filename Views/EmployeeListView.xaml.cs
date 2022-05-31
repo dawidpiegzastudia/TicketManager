@@ -38,11 +38,18 @@ namespace TicketManager.Views
             Employee employee = (Employee)gridEmployees.SelectedItem;
             EmployeePage employeePage = new EmployeePage();
             employeePage.employee = employee;
-            employeePage.ShowDialog();
-            using (TicketingSystemDatabaseContext db = new TicketingSystemDatabaseContext())
+            if (employee.Login == "Piegzus95")
             {
-                List<Employee> list = db.Employees.ToList();
-                gridEmployees.ItemsSource = list;
+                MessageBox.Show("This action is not allowed! You cannot edit default user!");
+            }
+            else
+            {
+                employeePage.ShowDialog();
+                using (TicketingSystemDatabaseContext db = new TicketingSystemDatabaseContext())
+                {
+                    List<Employee> list = db.Employees.ToList();
+                    gridEmployees.ItemsSource = list;
+                }
             }
 
         }

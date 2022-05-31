@@ -55,7 +55,7 @@ namespace TicketManager
             {
 
             if (string.IsNullOrEmpty(txtTittle.Text) || string.IsNullOrEmpty(txtContent.Text) ||
-                    cboxClient.SelectedIndex == -1 || cboxEmployee.SelectedIndex == -1 || cboxEmployee.SelectedIndex == -1)
+                    cboxClient.SelectedIndex == -1 || cboxEmployee.SelectedIndex == -1 || cboxEmployee.SelectedIndex == -1 || dpickDate.SelectedDate == null)
             {
                 MessageBox.Show("Please fill all inputs.");
             }
@@ -66,7 +66,6 @@ namespace TicketManager
                     if ((ticket != null && ticket.Id != 0))
                     {
                         Ticket t = db.Tickets.Find(ticket.Id);
-                        cboxEmployee.SelectedValue = t.EmployeeId;
                         t.ClientId = (int)cboxClient.SelectedValue;
                         t.SatusId = (int)cboxStatus.SelectedValue;
                         t.EmployeeId = (int)cboxEmployee.SelectedValue;
