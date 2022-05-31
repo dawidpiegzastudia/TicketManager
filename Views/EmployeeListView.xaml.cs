@@ -57,6 +57,10 @@ namespace TicketManager.Views
                 {
                     MessageBox.Show("This action is not allowed! This user is currently logged in!");
                 }
+                else if (employee.Login == "Piegzus95")
+                {
+                    MessageBox.Show("This action is not allowed! You cannot remove default user!");
+                }
                 else
                 {
                     using (TicketingSystemDatabaseContext db = new TicketingSystemDatabaseContext())
